@@ -1,18 +1,27 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mini Chatbot</title>
+    <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
 
-<h2>Mini Chatbot</h2>
+<div class="chat-container">
+    <header class="chat-header">
+        <h1>Mini Chatbot</h1>
+        <p>Say hello, ask how I am, or say bye</p>
+    </header>
 
-<div id="chatbox"></div>
+    <div id="chatbox"></div>
 
-<input id="message" placeholder="Type a message"/>
-<button onclick="sendMessage()">Send</button>
+    <div class="input-area">
+        <input id="message" type="text" placeholder="Type a message..." autocomplete="off"/>
+        <button class="send-btn" onclick="sendMessage()">Send</button>
+    </div>
+</div>
 
 <script src="/static/script.js"></script>
-
 </body>
 </html>

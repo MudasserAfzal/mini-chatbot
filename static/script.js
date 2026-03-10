@@ -11,6 +11,27 @@ async function sendMessage() {
     userMsg.textContent = message;
     chatbox.appendChild(userMsg);
 
+    // Typing indicator while waiting for the AI
+    const typingWrapper = document.createElement("div");
+    typingWrapper.className = "typing-indicator-wrapper";
+
+    const typingLabel = document.createElement("span");
+    typingLabel.className = "typing-indicator-label";
+    typingLabel.textContent = "Chatbot is thinking";
+
+    const typing = document.createElement("div");
+    typing.className = "typing-indicator";
+
+    for (let i = 0; i < 3; i++) {
+        const dot = document.createElement("span");
+        dot.className = "typing-dot";
+        typing.appendChild(dot);
+    }
+
+    typingWrapper.appendChild(typingLabel);
+    typingWrapper.appendChild(typing);
+    chatbox.appendChild(typingWrapper);
+
     input.value = "";
     chatbox.scrollTop = chatbox.scrollHeight;
 
@@ -25,6 +46,9 @@ async function sendMessage() {
 
         const data = await res.json();
 
+        // Remove typing indicator
+        typingWrapper.remove();
+
         const botMsg = document.createElement("div");
         botMsg.className = "message bot";
         botMsg.textContent = data.response;
@@ -32,6 +56,11 @@ async function sendMessage() {
 
         chatbox.scrollTop = chatbox.scrollHeight;
     } catch (err) {
+        // Remove typing indicator if still there
+        if (typingWrapper.isConnected) {
+            typingWrapper.remove();
+        }
+
         const errMsg = document.createElement("div");
         errMsg.className = "message bot";
         errMsg.textContent = "Sorry, something went wrong.";

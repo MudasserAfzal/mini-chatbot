@@ -5,10 +5,8 @@ User messages are sent to the **OpenAI ChatGPT API** (via `gpt-4.1-mini` by defa
 
 ## Preview
 
-Add a screenshot of the web interface (for example, save it as `static/ui-screenshot.png`) and reference it here:
-
 ```markdown
-![Mini Chatbot UI](static/ui-screenshot.png)
+![static/ui-screenshot.png]
 ```
 
 ## Features

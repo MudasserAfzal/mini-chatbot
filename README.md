@@ -5,9 +5,7 @@ User messages are sent to the **OpenAI ChatGPT API** (via `gpt-4.1-mini` by defa
 
 ## Preview
 
-```markdown
-![Mini Chatbot UI](static/ui-screenshot.png)
-```
+![Mini Chatbot UI](https://github.com/MudasserAfzal/mini-chatbot/blob/ac06e721fd294d49269732750ec14d185bd10b9b/static/ui-screenshot.png)
 
 ## Features
 

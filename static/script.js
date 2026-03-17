@@ -17,7 +17,7 @@ async function sendMessage() {
 
     const typingLabel = document.createElement("span");
     typingLabel.className = "typing-indicator-label";
-    typingLabel.textContent = "Chatbot is thinking";
+    typingLabel.textContent = "TravelMate is planning";
 
     const typing = document.createElement("div");
     typing.className = "typing-indicator";
@@ -68,6 +68,17 @@ async function sendMessage() {
         chatbox.scrollTop = chatbox.scrollHeight;
     }
 }
+
+// Quick prompt chips
+document.querySelectorAll(".chip").forEach((btn) => {
+    btn.addEventListener("click", () => {
+        const prompt = btn.getAttribute("data-prompt") || "";
+        const input = document.getElementById("message");
+        input.value = prompt;
+        input.focus();
+        sendMessage();
+    });
+});
 
 // Send on Enter
 document.getElementById("message").addEventListener("keypress", (e) => {

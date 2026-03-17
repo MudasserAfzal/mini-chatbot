@@ -1,15 +1,15 @@
-# Mini Chatbot
+# TravelMate AI (Gemini Travel Itinerary Chatbot)
 
-An elegant, single-page AI chatbot built with **Flask** on the backend and a modern, animated UI on the frontend.  
-User messages are sent to the **OpenAI ChatGPT API** (via `gpt-4.1-mini` by default) and streamed back to the browser in a chat-style interface.
+A modern, animated **travel itinerary assistant** built with **Flask** + the **Gemini API**.  
+Describe your destination, number of days, budget, pace, and transport preferences — and the bot will generate a day-by-day plan.
 
 ## Preview
 
-![Mini Chatbot UI](https://github.com/MudasserAfzal/mini-chatbot/blob/ac06e721fd294d49269732750ec14d185bd10b9b/static/ui-screenshot.png)
+![TravelMate AI UI](static/ui-screenshot.png)
 
 ## Features
 
-- **AI-powered conversations** using the OpenAI Chat Completions API
+- **AI-powered travel planning** using the Gemini API
 - **Clean, modern UI** with gradient background and glassmorphism card
 - **Smooth animations** for page load and message bubbles
 - **Typing indicator** so users can see when the bot is “thinking”
@@ -19,13 +19,13 @@ User messages are sent to the **OpenAI ChatGPT API** (via `gpt-4.1-mini` by defa
 ## Tech Stack
 
 - **Backend**: Python, Flask
-- **AI**: OpenAI ChatGPT API (`gpt-4.1-mini`)
+- **AI**: Gemini API (`gemini-2.0-flash` via `google-genai`)
 - **Frontend**: HTML, vanilla JavaScript, CSS (DM Sans, glassmorphism, animations)
 
 ## Prerequisites
 
 - Python 3.9+
-- An OpenAI API key
+- A Gemini API key
 
 ## Setup
 
@@ -34,7 +34,7 @@ User messages are sent to the **OpenAI ChatGPT API** (via `gpt-4.1-mini` by defa
    In the project root, create a `.env` file and add your API key:
 
    ```bash
-   OPENAI_API_KEY=your_api_key_here
+   GEMINI_API_KEY=your_api_key_here
    ```
 
 2. **Install dependencies**
@@ -57,12 +57,13 @@ The app will start on `http://127.0.0.1:5000`. Open it in your browser and start
 
 - Use a proper WSGI server such as **gunicorn** or **uWSGI** (behind Nginx or another reverse proxy) instead of `app.run(debug=True)` for production deployments.
 - Set `debug=False` and configure `host`/`port` appropriately when running in production.
-- Store your `OPENAI_API_KEY` securely using environment variables or a secrets manager, not committed to source control.
+- Store your `GEMINI_API_KEY` securely using environment variables or a secrets manager, not committed to source control.
+- If you see `RESOURCE_EXHAUSTED` / quota errors, verify your Gemini API plan/billing and rate limits for the project.
 
 ## Customization
 
-- **Model**: Change the `model` name in `app.py` (`gpt-4.1-mini`) to another model that fits your use case and quota.
-- **Persona**: Update the system message in `app.py` to adjust the chatbot’s tone and behavior (e.g., more formal, more friendly, domain-specific, etc.).
+- **Model**: Change the `model` name in `app.py` (`gemini-2.0-flash`) to another Gemini model that fits your use case and quota.
+- **Persona**: Update the system instruction in `app.py` to adjust the assistant’s behavior (trip format, level of detail, constraints, etc.).
 - **Styling**: Edit `static/style.css` to tweak colors, animations, spacing, or to add branding for your own product.
 
 ## License

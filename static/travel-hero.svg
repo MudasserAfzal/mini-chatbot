@@ -1,0 +1,49 @@
+<svg width="1200" height="300" viewBox="0 0 1200 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="300" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0B1733"/>
+      <stop offset="0.55" stop-color="#0E2A4D"/>
+      <stop offset="1" stop-color="#0B4B5A"/>
+    </linearGradient>
+    <radialGradient id="sun" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(900 90) rotate(90) scale(110 110)">
+      <stop stop-color="#00FF88" stop-opacity="0.9"/>
+      <stop offset="1" stop-color="#00FF88" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="wave" x1="0" y1="200" x2="1200" y2="270" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#00D9FF" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#00FF88" stop-opacity="0.25"/>
+    </linearGradient>
+    <filter id="blurGlow" x="-20%" y="-50%" width="140%" height="200%">
+      <feGaussianBlur stdDeviation="14" result="b"/>
+      <feColorMatrix in="b" type="matrix" values="
+        1 0 0 0 0
+        0 1 0 0 0
+        0 0 1 0 0
+        0 0 0 0.7 0" result="c"/>
+      <feBlend in="SourceGraphic" in2="c"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="300" fill="url(#bg)"/>
+  <circle cx="900" cy="90" r="110" fill="url(#sun)"/>
+
+  <g filter="url(#blurGlow)">
+    <path d="M0 215C120 190 240 260 360 235C480 210 600 140 720 165C840 190 960 270 1080 245C1140 232 1170 220 1200 215V300H0V215Z" fill="url(#wave)"/>
+    <path d="M0 240C140 215 260 290 400 265C540 240 640 175 790 200C940 225 1030 295 1200 265V300H0V240Z" fill="rgba(255,255,255,0.06)"/>
+  </g>
+
+  <!-- Minimal travel doodles -->
+  <g opacity="0.9">
+    <path d="M220 120C235 110 260 112 275 125C290 138 295 160 282 175C269 190 245 195 228 184C211 173 205 150 213 134C216 128 218 124 220 120Z" stroke="rgba(255,255,255,0.35)" stroke-width="3" fill="rgba(255,255,255,0.04)"/>
+    <path d="M242 128L247 156L258 170" stroke="rgba(0,217,255,0.55)" stroke-width="3" stroke-linecap="round"/>
+    <path d="M250 95C260 82 286 78 300 90" stroke="rgba(255,255,255,0.22)" stroke-width="3" stroke-linecap="round"/>
+    <path d="M68 110C105 78 160 78 200 110" stroke="rgba(255,255,255,0.18)" stroke-width="3" stroke-linecap="round"/>
+    <path d="M70 140C110 110 160 110 198 140" stroke="rgba(255,255,255,0.14)" stroke-width="3" stroke-linecap="round"/>
+  </g>
+
+  <!-- Tiny paper plane -->
+  <g transform="translate(980 155) rotate(-10)">
+    <path d="M0 16L92 0L62 40L46 28L28 44L22 26L0 16Z" fill="rgba(0,217,255,0.35)"/>
+    <path d="M22 26L92 0L46 28" stroke="rgba(10,10,15,0.35)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg>

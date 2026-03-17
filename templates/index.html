@@ -12,8 +12,23 @@
 
 <div class="chat-container">
     <header class="chat-header">
-        <h1>Mini Chatbot</h1>
-        <p>Say hello, ask how I am, or say bye</p>
+        <div class="brand">
+            <img class="brand-icon" src="/static/plane.svg" alt="Plane icon">
+            <div class="brand-text">
+                <h1>TravelMate AI</h1>
+                <p>Tell me days + transport. I’ll build your itinerary.</p>
+            </div>
+        </div>
+
+        <div class="hero">
+            <img class="hero-image" src="/static/travel-hero.svg" alt="Travel illustration">
+        </div>
+
+        <div class="chips" aria-label="Quick prompts">
+            <button class="chip" data-prompt="Plan a 3-day trip to Dubai. Budget: mid-range. Transport: metro + taxi. Pace: standard.">3 days in Dubai</button>
+            <button class="chip" data-prompt="Plan a 5-day trip to Istanbul for first-timers. Budget: low. Transport: walk + tram. Pace: relaxed.">5 days in Istanbul</button>
+            <button class="chip" data-prompt="Design a 7-day Japan itinerary (Tokyo + Kyoto) with bullet-train transport. Budget: mid-range. Pace: packed.">7 days Japan (Tokyo+Kyoto)</button>
+        </div>
     </header>
 
     <div id="chatbox"></div>
